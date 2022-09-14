@@ -1,0 +1,106 @@
+<div  style="width: 80rem;">
+    <div class="row">
+        <div class="col"  >
+       <ul class="nav" style="padding-right: 50px !important;" >
+    <li class="nav-item">
+      <a class="nav-link active" aria-current="page" (click)="listBooks()">All My Books</a>
+    </li>
+    <li class="nav-item" *ngIf="show">
+        <a class="nav-link active" aria-current="page" (click)="showDisable()">Create Book</a>
+      </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/author">Logout</a>
+    </li>
+  </ul>
+  </div>
+  </div>
+  </div>
+
+ <div class="divider d-flex align-items-center my-4">
+    <h3 class="text-center fw-bold mx-3 mb-0">Create Book</h3>
+</div>
+
+<div class="card" style="width: 80rem;" *ngIf="show!=true" >
+
+    <div class="card-body">
+        <br/>
+        <div class="row">
+            
+            <div class="col">
+                <span>Book Title:</span>
+              <input type="text" class="form-control" 
+              placeholder="Book Title" aria-label="Book Title">
+            </div>
+            <div class="col">
+                <span>Book Category:</span>
+              <input type="text" class="form-control" 
+              placeholder="Book Category" aria-label="Book Category">
+            </div>
+        </div>
+    
+        <div class="row">
+           
+            <div class="col">
+             <span>Book Image:</span>
+             <input type="text" class="form-control" 
+             placeholder="Book Image" aria-label="Book Image">
+            </div>
+            <div class="col">
+              <span>Book Price:</span>
+             <input type="text" class="form-control"
+             placeholder="Book Price" aria-label="Book Price">
+             </div>
+             
+        </div>  
+        
+        <div class="row">
+           
+            <div class="col">
+             <span>Book Releasing Date:</span>
+             <input type="text" class="form-control" 
+             placeholder="DD/MM/YYYY" aria-label="Releasing Date">
+            </div>
+
+            <div class="col">
+              <span>Book Publisher:</span>
+             <input type="number" class="form-control" 
+             placeholder="Book Publisher" aria-label="Book Publisher">
+             </div>
+             
+        </div> 
+
+        <div class="row">
+           
+            <div class="col">
+             <span>Book Active Status:</span>
+             <input type="text" class="form-control" 
+             placeholder="Book Active Status" aria-label="Book Active Status">
+            </div>
+            <div class="col">
+              <span>Book Content:</span>
+             <input type="text" class="form-control"
+             placeholder="Book Content" aria-label="Book Content">
+             </div>
+             
+        </div>  
+        
+          <div class="col-12 text-right">
+            <br/>
+            <button type="submit" class="btn btn-outline-primary" (click)="save()">Submit</button>
+          </div>
+    </div>
+</div>
+<div *ngIf="show" class="alert alert-primary" role="alert">
+ 
+<table class="table table-dark table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Book Title</th>
+        <th scope="col">Published Date</th>
+        <th scope="col">Book Price</th>
+        <th scope="col">Book Active Status</th>
+        </tr>
+        </thead>
+        </table>
+</div>
