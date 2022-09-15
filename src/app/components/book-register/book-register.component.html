@@ -28,12 +28,12 @@
             
             <div class="col">
                 <span>Book Title:</span>
-              <input type="text" class="form-control" 
+              <input type="text" class="form-control" [(ngModel)]="book.title"
               placeholder="Book Title" aria-label="Book Title">
             </div>
             <div class="col">
                 <span>Book Category:</span>
-              <input type="text" class="form-control" 
+              <input type="text" class="form-control" [(ngModel)]="book.category"
               placeholder="Book Category" aria-label="Book Category">
             </div>
         </div>
@@ -42,12 +42,13 @@
            
             <div class="col">
              <span>Book Image:</span>
-             <input type="text" class="form-control" 
+             <input type="text" class="form-control" [(ngModel)]="book.image"
              placeholder="Book Image" aria-label="Book Image">
             </div>
             <div class="col">
               <span>Book Price:</span>
-             <input type="text" class="form-control"
+             <input type="text" class="form-control" 
+             [(ngModel)]="book.price"
              placeholder="Book Price" aria-label="Book Price">
              </div>
              
@@ -58,12 +59,14 @@
             <div class="col">
              <span>Book Releasing Date:</span>
              <input type="text" class="form-control" 
+             [(ngModel)]="book.releaseDate"
              placeholder="DD/MM/YYYY" aria-label="Releasing Date">
             </div>
 
             <div class="col">
               <span>Book Publisher:</span>
-             <input type="number" class="form-control" 
+             <input type="text" class="form-control"
+             [(ngModel)]="book.publisher"
              placeholder="Book Publisher" aria-label="Book Publisher">
              </div>
              
@@ -74,11 +77,13 @@
             <div class="col">
              <span>Book Active Status:</span>
              <input type="text" class="form-control" 
+             [(ngModel)]="book.active"
              placeholder="Book Active Status" aria-label="Book Active Status">
             </div>
             <div class="col">
               <span>Book Content:</span>
              <input type="text" class="form-control"
+             [(ngModel)]="book.content"
              placeholder="Book Content" aria-label="Book Content">
              </div>
              
@@ -101,6 +106,13 @@
         <th scope="col">Book Price</th>
         <th scope="col">Book Active Status</th>
         </tr>
+        <tr *ngFor="let b of books; index as i">
+          <td>   {{b.id}} </td>
+          <td>   {{b.publisher}} </td>
+          <td>   {{b.title}} </td>
+          <td>   {{b.price}} </td>
+          <td>   {{b.active}} </td>
+          </tr>
         </thead>
         </table>
 </div>
